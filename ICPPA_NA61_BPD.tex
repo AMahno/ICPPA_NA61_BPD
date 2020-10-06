@@ -21,12 +21,12 @@ NA61/SHINE is a fixed-target experiment located in the H2 line in the North Area
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{NA61_scheme.png}
+	\includegraphics[width=.7\textwidth]{NA61_scheme.png}
 	\caption{\label{fig:1} NA61/SHINE experiment after the LS2 upgrades}
 \end{figure}
 
 \section{New BPD requirements}
-The main purpose of BPDs detectors is measurement of beam particle trajectory on event-by-event basis (particle-by-particle). New BPDs should monitor lead and proton beam intensities with 10$^5$Hz intensity and should operate in vacuum, which renders previous solutions (proportional chambers non-feasible). Other detector requirements include:
+The main purpose of BPDs detectors is measurement of beam particle trajectory on event-by-event basis (particle-by-particle). New BPDs should monitor lead and proton beam intensities with 10$^5$Hz and operate in vacuum, which renders previous solutions (proportional chambers non-feasible). Other detector requirements include:
 \begin{enumerate}
 	\item Detector/detectors should work with p and Pb beams
 	\item The planed beam intensity is on the level of 100~kHz of Pb or p ions at momentum 13-150 $AGeV/c$.
@@ -43,7 +43,7 @@ On NA61/SHINE beam profile is measured by a telescope consisting out of 3 separa
 
 \subsection{Sensitive element selection}
 In this work, only the design of Silicon Strip Detector (SSD) version of the BPDs will be presented, although design based on the scintillating fibres has also been considered.
-In order to fulfil above-mentioned requirements, a Hamamatsu S13804 detector has been chosen, meeting constraints on accuracy and sensitivity.
+In order to fulfil above-mentioned requirements, a Hamamatsu S13804 detector has been chosen, being the only one meeting constraints on spacial resolution.
 For this application, SSDs have a set of advantages, including: being an off-the-shelf component and having a sufficient radiation hardness for this application. Such detectors have been already used for similar task at BM@N, LHC, J-PARC and other experiments.
 
 \subsection{Mechanical design}
@@ -51,7 +51,7 @@ Each of the 3 BPDs will utilize a 6-way vacuum fitting with 2 of the openings be
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.5\textwidth]{6_way_fitting.png}
+	\includegraphics[width=.4\textwidth]{6_way_fitting.png}
 	\caption{\label{fig:2} 6-way vacuum fitting}
 \end{figure}
 
@@ -82,9 +82,9 @@ Mounting fixtures are offset, so the beam would hit the middle of the sensitive 
 \end{figure}
 
 \section{Front End Electronics design}
-A design of typical front end electronics has been developed. Schematic is built entirely out of off-the-shelf components, without usage of any custom-manufactured ASICs or other expensive or hard to obtain parts.
+A design of a typical front end electronics channel has been developed. Schematic is built entirely out of off-the-shelf components, without usage of any custom-manufactured ASICs or other expensive or hard to obtain parts.
 
-Typical amplifier consists out of fast and charge-sensitive amplifier, an intermediate amplifier and an output buffer (see figures ~\ref{fig:7} and ~\ref{fig:8}). An electronically-controlled scale-changing feature has been added later, making the same board usable with both proton and heavy ion beams.
+Each amplifier consists out of fast and charge-sensitive amplifier, an intermediate amplifier and an output buffer (see figure ~\ref{fig:7}). An electronically-controlled scale-changing feature has been added later, making the same board usable with both proton and heavy ion beams.
 
 An evaluation board with one typical amplifier has been manufactured (see figure ~\ref{fig:8}) and tested for amplification and noise spectrum with satisfactory results (see figure ~\ref{fig:9} and ~\ref{fig:10}).
 
@@ -110,6 +110,9 @@ An evaluation board with one typical amplifier has been manufactured (see figure
 	\end{minipage} 
 \end{figure}
 
+\section{Conclusions}
+
+Development of BPD is ongoing and showing progress. At this point, mechanical design of the detector is completed, with electronic side also nearing the production. First detector of this design is expected to be manufactured at the beginning of 2021 to perform single-detector tests at a beam line.
 
 \end{document}
 

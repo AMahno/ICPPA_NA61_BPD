@@ -12,21 +12,21 @@
 \ead{makhnev.a@phystech.edu}
 
 \begin{abstract}
-The NA61/SHINE detector at the CERN SPS is undergoing a major upgrade during the LHC Long Shutdown 2 period (2019-2021). The upgrade is essential to fulfil the requirements of the new open charm measurement program. In this program detector will operate at a beam intensity increased by a factor of 10, which requires an upgrade of current Beam Position Detectors (BPDs). New BPDs should monitor lead and proton beam intensities with 10$^5$ Hz intensity. In this article, progress on design and development of the new BPDs based on Si strip detectors, its front-end and readout electronics, as well as integration with the NA61/SHINE DAQ will be presented.
+The NA61/SHINE experiment at the CERN SPS is undergoing a major upgrade during the LHC Long Shutdown 2 period (2019-2021). The upgrade is essential to fulfil the requirements of the new open charm measurement program. In this program detector will operate at a beam intensity increased by a factor of 10, which requires an upgrade of current Beam Position Detectors (BPDs). New BPDs should monitor lead and proton beam intensities with  up to 10$^5$ Hz rate. In this article, progress on design and development of the new BPDs based on Si strip detectors, its front-end and readout electronics, as well as integration with the NA61/SHINE DAQ will be presented.
 \end{abstract}
 
 \section{Introduction}
 
-NA61/SHINE is a fixed-target experiment located in the H2 line in the North Area of the CERN Super Proton Synchrotron (SPS)~\cite{Abgrall:2014fa}. The multi-purpose detector is optimized to study hadron production in hadron-proton, hadron-nucleus and nucleus-nucleus collisions. Figure~\ref{fig:1} presents a schematic drawing of the detector after the Long Shutdown 2 (LS2) upgrades. It consists of a large acceptance hadron spectrometer with excellent capabilities in charged particle momentum measurements and identification by a set of eight Time Projection Chambers (TPC) as well as Time-of-Flight (ToF) detectors. The Vertex Detector (SAVD) is placed 5~cm centimetres downstream from the target. It consists of four layers of silicon pixel sensors allowing to reconstruct vertices of short-lived charm particles like D$^0$ mesons. The high resolution forward calorimeter, the Projectile Spectator Detector (PSD), measures energy flow around the beam direction, which in nucleus-nucleus reactions is primarily a measure of the number of spectator (non-interacting) nucleons. An array of beam detectors identifies beam particles, secondary hadrons and ions as well as primary ions, and measures precisely their trajectories.
+NA61/SHINE is a fixed-target experiment located in the H2 line in the North Area of the CERN Super Proton Synchrotron (SPS)~\cite{Abgrall:2014fa}. The multi-purpose detector is optimized to study hadron production in hadron-proton, hadron-nucleus and nucleus-nucleus collisions. Figure~\ref{fig:1} presents a schematic drawing of the detector after the Long Shutdown 2 (LS2) upgrades. It consists of a large acceptance hadron spectrometer with excellent capabilities in charged particle momentum measurements and identification by a set of eight Time Projection Chambers (TPC) as well as Time-of-Flight (ToF) detectors. The Vertex Detector (SAVD) is placed 5~cm centimetres downstream from the target. It consists of four layers of silicon pixel sensors allowing to reconstruct vertices of short-lived charm particles like D$^0$ mesons. A forward hadron calorimeter, the Projectile Spectator Detector (PSD), measures energy of spectator (non-interacting) nucleons, and is used for centrality and interaction plane determination. An array of beam detectors identifies beam particles, precisely measures their trajectories and provides trigger signals.
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.7\textwidth]{NA61_scheme.png}
-	\caption{\label{fig:1} NA61/SHINE experiment after the LS2 upgrades}
+	\caption{\label{fig:1} NA61/SHINE experiment scheme after the LS2 upgrades}
 \end{figure}
 
 \section{New BPD requirements}
-The main purpose of BPDs detectors is measurement of beam particle trajectory on event-by-event basis (particle-by-particle). New BPDs should monitor lead and proton beam intensities with 10$^5$Hz and operate in vacuum, which renders previous solutions (proportional chambers non-feasible). Other detector requirements include:
+The main purpose of BPDs detectors is measurement of beam particle trajectory on event-by-event basis (particle-by-particle). New BPDs should monitor lead and proton beam rates up to 10$^5$Hz and operate in vacuum, which renders previous solutions (proportional chambers non-feasible). Other detector requirements include:
 \begin{enumerate}
 	\item Detector/detectors should work with p and Pb beams
 	\item The planed beam intensity is on the level of 100~kHz of Pb or p ions at momentum 13-150 $AGeV/c$.
@@ -39,11 +39,11 @@ The main purpose of BPDs detectors is measurement of beam particle trajectory on
 \section{New BPD design}
 
 \subsection{Detector position on the beam line}
-On NA61/SHINE beam profile is measured by a telescope consisting out of 3 separate detectors with 2-coordinate determination of the beam particle position. These 3 detectors are mounted before the target.
+On NA61/SHINE beam profile is measured by a telescope consisting out of 3 separate detectors with 2-coordinate determination of the beam particle position (see e~\ref{fig:1}). These 3 detectors are mounted before the target.
 
 \subsection{Sensitive element selection}
 In this work, only the design of Silicon Strip Detector (SSD) version of the BPDs will be presented, although design based on the scintillating fibres has also been considered.
-In order to fulfil above-mentioned requirements, a Hamamatsu S13804 detector has been chosen, being the only one meeting constraints on spacial resolution.
+In order to fulfil above-mentioned requirements, a Hamamatsu S13804 detector~\cite{Hamamatsu_det} has been chosen, being the only one meeting constraints on spacial resolution. S13804 is a 9x9 cm Silicon wafer with 1024 diodes etched into it, however, only the 200 inner ones will be used.
 For this application, SSDs have a set of advantages, including: being an off-the-shelf component and having a sufficient radiation hardness for this application. Such detectors have been already used for similar task at BM@N, LHC, J-PARC and other experiments.
 
 \subsection{Mechanical design}
@@ -52,10 +52,10 @@ Each of the 3 BPDs will utilize a 6-way vacuum fitting with 2 of the openings be
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{6_way_fitting.png}
-	\caption{\label{fig:2} 6-way vacuum fitting}
+	\caption{\label{fig:2} Six-way vacuum fitting}
 \end{figure}
 
-Each of the detector inserts consists out of an ISO-K vacuum flange with a seal/centering ring, with two vacuum feedthrough connectors and two optical mounting brackets machined into it. An aluminium plate with an opening for the beam is mounted onto the brackets to ensure precise positioning of the detector in the beam pipe. A flexible PCB is then mounted onto the aluminium plate, which hosts the detector itself and two mating connectors for the feedthrough. Usage of flexible PCB ensure minimum gas emission and removes the need for additional connectors between the detector and the front-end amplifiers. Design is presented on the figure~\ref{fig:3} and ~\ref{fig:4}.
+Each of the detector inserts consists out of an ISO-K vacuum flange with a seal/centering ring, with two vacuum feedthrough connectors and two optical mounting brackets mounted into the machined openings in it. An aluminium plate with an opening for the beam is mounted onto the brackets to ensure precise positioning of the detector in the beam pipe. A flexible PCB is then mounted onto the aluminium plate, which hosts the detector itself and two mating connectors for the feedthrough. Usage of flexible PCB ensure minimum gas emission and removes the need for additional connectors between the detector and the front-end amplifiers. Design is presented on the figure~\ref{fig:3} and ~\ref{fig:4}.
 
 \begin{figure}[htbp]
 	\begin{minipage}{14pc}
@@ -68,51 +68,42 @@ Each of the detector inserts consists out of an ISO-K vacuum flange with a seal/
 	\end{minipage} 
 \end{figure}
 
-Mounting fixtures are offset, so the beam would hit the middle of the sensitive part of the detector, as the topology illustrations show that the sensitive elements are arranged as two columns with bonding pads in the middle, see figures ~\ref{fig:5} and ~\ref{fig:6}.
-
-\begin{figure}[htbp]
-	\begin{minipage}{18pc}
-		\includegraphics[width=\textwidth]{topology.png}
-		\caption{\label{fig:5} Detector topology view}
-	\end{minipage}\hspace{2pc}
-	\begin{minipage}{13pc}
-		\includegraphics[width=\textwidth]{fixture_offset.png}
-		\caption{\label{fig:6} Mounting fixture design}
-	\end{minipage} 
-\end{figure}
+Mounting fixtures are offset, so the beam would hit the middle of the sensitive part of the detector, as the topology illustrations show that the sensitive elements are arranged as two columns with bonding pads in the middle.
 
 \section{Front End Electronics design}
-A design of a typical front end electronics channel has been developed. Schematic is built entirely out of off-the-shelf components, without usage of any custom-manufactured ASICs or other expensive or hard to obtain parts.
+A design of the front end electronics channel has been developed. Schematic is built entirely out of off-the-shelf components, without usage of any custom-manufactured ASICs or other expensive or hard to obtain parts.
 
 Each amplifier consists out of fast and charge-sensitive amplifier, an intermediate amplifier and an output buffer (see figure ~\ref{fig:7}). An electronically-controlled scale-changing feature has been added later, making the same board usable with both proton and heavy ion beams.
 
-An evaluation board with one typical amplifier has been manufactured (see figure ~\ref{fig:8}) and tested for amplification and noise spectrum with satisfactory results (see figure ~\ref{fig:9} and ~\ref{fig:10}).
-
+An evaluation board with one front-end channel has been manufactured (see figure ~\ref{fig:8}) and tested for amplification and noise spectrum with satisfactory results (see figure ~\ref{fig:9} and ~\ref{fig:10}).
 \begin{figure}[htbp]
-	\begin{minipage}{18pc}
+	\begin{minipage}{20pc}
 		\includegraphics[width=\textwidth]{schematic.png}
 		\caption{\label{fig:7} Typical amplifier schematic}
 	\end{minipage}\hspace{2pc}
-	\begin{minipage}{18pc}
+	\begin{minipage}{20pc}
 		\includegraphics[width=\textwidth]{amp_photo.png}
 		\caption{\label{fig:8} Evaluation board}
 	\end{minipage} 
 \end{figure}
-
 \begin{figure}[htbp]
-	\begin{minipage}{18pc}
+	\begin{minipage}{20pc}
 		\includegraphics[width=\textwidth]{osc.png}
 		\caption{\label{fig:9} Amplifier output signal with generator input}
 	\end{minipage}\hspace{2pc}
-	\begin{minipage}{18pc}
+	\begin{minipage}{20pc}
 		\includegraphics[width=\textwidth]{noise.png}
 		\caption{\label{fig:10} Noise characteristics}
 	\end{minipage} 
 \end{figure}
-
 \section{Conclusions}
+Development new Silicon Strip BPD, which will be able to operate with beam intensities up to 10$^5$ Hz is presented. At the moment, mechanical design is completed and front-end electronics prototype has been developed. First Silicon Strip BPD is expected to be completed and tested at the beginning of 2021.
 
-Development of BPD is ongoing and showing progress. At this point, mechanical design of the detector is completed, with electronic side also nearing the production. First detector of this design is expected to be manufactured at the beginning of 2021 to perform single-detector tests at a beam line.
+\section*{References}
+\begin{thebibliography}{9}
+	\bibitem{Abgrall:2014fa} N. Abgrallet al., [NA61/SHINE Collab.]JINST9(2014) P06005,arXiv:1401.4699[physics.ins-det].
+	\bibitem{Hamamatsu_det}Hamamamtsu. https://www.hamamatsu.com/eu/en/product/type/S13804/index.html.
+\end{thebibliography}
 
 \end{document}
 
